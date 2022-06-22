@@ -5,6 +5,11 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ *
+ * @author Marcela Mejia
+ */
+
 public class Logger {
     public static void main(String[] args) {
         Logger logger = Logger.getLogger("MyLog");

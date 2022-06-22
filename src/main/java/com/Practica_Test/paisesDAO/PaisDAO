@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Brandon R
+ * @author Marcela Mejia
  */
 public class PaisDAO {
 

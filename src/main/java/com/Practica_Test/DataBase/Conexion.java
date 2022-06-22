@@ -6,7 +6,7 @@ package main.java.com.Practica_Test.DataBase;
 
 /**
  *
- * @author Brandon R
+ * @author Marcela Mejia
  */
 
 import java.sql.Connection;
