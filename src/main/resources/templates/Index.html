@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Países</title>
+        <meta charset="UTF-8">
+        <link href="../static/css/estilo1.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla1 :: header"></header>
+        <br>
+        <br>
+        <h2>Lista de Países</h2>
+        <a th:href="@{/nuevoPais}">Ingrese un pais nuevo</a>
+        <br>
+        <br>
+        <!-- Regular los datos para que aparezca sí y solo sí no es nula 
+             ni vacía. El # es cuando es una propiedad del model
+             el @ es una acción una redirección o algo
+             el $ es para un mapeo buscar o usar algo dentro de un objeto.-->
+        <div th:if="${paises != null and !paises.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Capital</th>
+                        <th>Habitantes</th>
+                        <th>Continente</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- th:each="item: ${lista}"-->
+                    <tr th:each="item : ${paises}">
+                        <td th:text="${item.nombre}"></td>
+                        <td th:text="${item.capital}"></td>
+                        <td th:text="${item.habitantes}"></td>
+                        <td th:text="${item.continente}"></td>                       
+                        <td><a th:href="@{/modificarPais/} + ${item.idEstado}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarPais/} + ${item.idEstado}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>    
+        </div>
+        <!-- Regular los datos para que aparezca sí y solo sí es nula o vacía -->
+        <div th:if="${paises == null or paises.empty}">
+            <p>No tenemos lista de clientes</p>
+        </div>
+        <footer th:replace="layout/plantilla1 :: footer"></footer>
+    </body>
+</html>

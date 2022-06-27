@@ -1,10 +1,12 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Países</title>
         <meta charset="UTF-8">
     </head>
-    <body th:fragment="body"; style="background-color: white;">
-        <header th:fragment="header" style="background-color: #1496c1; color: white; font-family: Somar,sans-serif; position: absolute; width: 80%; height: 15%">
+    <body>
+        <header th:fragment="header" style="background-color: #1496c1; color: white; font-family: Somar,sans-serif; position: absolute; width: 100%;
+                height: 7%; top: 0%; left: 0%">
             <h1 style="position: absolute; left:46%; bottom: 8%">Países</h1> 
         </header>
 
@@ -20,7 +22,7 @@
         </ul>
 
 
-        <footer th:fragment="footer"; style="background-color: white; position:absolute; height: 15%; bottom: 0%; width: 100%">
+        <footer th:fragment="footer" style="background-color: white; position:absolute; height: 15%; bottom: 0%; width: 100%">
             <hr/>
             <a style="font-size: 12px; position:absolute; left:40%; bottom:45%; color: black">Términos y Condiciones</a>
             <a style="font-size: 12px; position:absolute; left:56%; bottom:45%; color: black">Política de Privacidad</a>

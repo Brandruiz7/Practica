@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "estado")
-public class Paises implements Serializable {
+public class Pais implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,11 +30,11 @@ public class Paises implements Serializable {
     String habitantes;
     String continente;
 
-    public Paises() {
+    public Pais() {
         
     }
 
-    public Paises(String nombre, String capital, String habitantes, String continente) {
+    public Pais(String nombre, String capital, String habitantes, String continente) {
         this.nombre = nombre;
         this.capital = capital;
         this.habitantes = habitantes;

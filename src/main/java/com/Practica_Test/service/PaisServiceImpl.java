@@ -8,12 +8,12 @@
 package com.Practica_Test.service;
 
 
-import com.Practica_Test.domain.Paises;
-import com.Practica_Test.paisesDAO.PaisesDao;
+import com.Practica_Test.domain.Pais;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import com.Practica_Test.PaisDAO.PaisDao;
 
 
 /**
@@ -21,17 +21,17 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Brandon R
  */
 @Service
-public class PaisesServiceImpl implements PaisesService {
+public class PaisServiceImpl implements PaisService {
 
     @Autowired
-    private PaisesDao PaisesDao;
+    private PaisDao PaisDao;
 
     //Los que son de lectura @Transactional(readOnly = true) y sino normal.
     
     @Override
     @Transactional(readOnly = true)
-    public List<Paises> getPaises() {
-        return (List<Paises>) PaisesDao.findAll();
+    public List<Pais> getPaises() {
+        return (List<Pais>) PaisDao.findAll();
     }
 
     /**
@@ -42,8 +42,8 @@ public class PaisesServiceImpl implements PaisesService {
      */
     @Override
     @Transactional(readOnly = true)
-    public Paises getPais(Paises pais) {
-        return PaisesDao.findById(pais.getIdEstado()).orElse(null);
+    public Pais getPais(Pais pais) {
+        return PaisDao.findById(pais.getIdEstado()).orElse(null);
     }
 
     /**
@@ -53,8 +53,8 @@ public class PaisesServiceImpl implements PaisesService {
      */
     @Override
     @Transactional
-    public void save(Paises pais) {
-        PaisesDao.save(pais);
+    public void save(Pais pais) {
+        PaisDao.save(pais);
     }
 
     /**
@@ -64,7 +64,7 @@ public class PaisesServiceImpl implements PaisesService {
      */
     @Override
     @Transactional
-    public void delete(Paises pais) {
-        PaisesDao.delete(pais);
+    public void delete(Pais pais) {
+        PaisDao.delete(pais);
     }
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Modificar País</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/estilo1.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla2 :: header"></header>
+        <br>
+        <h2>Ingrese datos del país</h2>
+        <a th:href="@{/}">Regresar</a>
+        <br>
+        <br>
+        <!-- Definir el submit como post para poder guardar los datos -->
+        <form th:action="@{/guardarPais}" method="POST"
+              th:object="${pais}">
+            <input type="hidden" name="idEstado" th:field="*{idEstado}">
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" th:field="*{nombre}">
+            <br>
+            <label for="capital">Capital: </label>
+            <input type="text" id="capital" name="capital" th:field="*{capital}">
+            <br>
+            <label for="habitantes">Habitantes: </label>
+            <input type="text" id="habitantes" name="habitantes" th:field="*{habitantes}">
+            <br>
+            <label for="continente">Continente: </label>
+            <input type="text" id="continente" name="continente" th:field="*{continente}">
+            <br>
+            <input type="submit" name="guardar" value="Guardar">
+        </form>
+        <footer th:replace="layout/plantilla2 :: footer"></footer>
+    </body>
+</html>

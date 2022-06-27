@@ -7,20 +7,20 @@
  */
 package com.Practica_Test.service;
 
-import com.Practica_Test.domain.Paises;
+import com.Practica_Test.domain.Pais;
 import java.util.List;
 
 /**
  *
  * @author Brandon R
  */
-public interface PaisesService {
+public interface PaisService {
 
-    public List<Paises> getPaises();
+    public List<Pais> getPaises();
 
-    public Paises getPais(Paises pais);
+    public Pais getPais(Pais pais);
 
-    public void save(Paises pais);
+    public void save(Pais pais);
 
-    public void delete(Paises pais);
+    public void delete(Pais pais);
 }

@@ -5,9 +5,9 @@
  * Realizado por: Grupo 6
  * Práctica de examen
  */
-package com.Practica_Test.paisesDAO;
+package com.Practica_Test.PaisDAO;
 
-import com.Practica_Test.domain.Paises;
+import com.Practica_Test.domain.Pais;
 import org.springframework.data.repository.CrudRepository;
 
 
@@ -15,6 +15,6 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author Brandon R
  */
-public interface PaisesDao extends CrudRepository<Paises, Long>{
+public interface PaisDao extends CrudRepository<Pais, Long>{
     
 }
